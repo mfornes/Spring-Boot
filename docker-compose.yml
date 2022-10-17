@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  gateway-db:
+    container_name: gateway_db
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=gateway
+      - MYSQL_USER=musala
+      - MYSQL_PASSWORD=musala
+    volumes:
+      - gateway-db-volume:/var/lib/mysql
+    networks:
+      - gateway-network
+
+  backend-app:
+    container_name: backend_app
+    depends_on:
+      - gateway-db
+    build: ./gateway
+    restart: always 
+    environment: 
+      - MYSQL_HOST=172.25.0.2
+      - MYSQL_PORT=3306
+      - MYSQL_USERNAME=musala
+      - MYSQL_PASSWORD=musala 
+    networks:
+      - gateway-network
+
+networks:
+  gateway-network:
+
+volumes:
+  gateway-db-volume: 
