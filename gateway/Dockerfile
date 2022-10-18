@@ -1,7 +1,7 @@
 FROM maven:3.8.3-openjdk-17 as builder
 WORKDIR /build
 COPY . .
-RUN mvn clean package
+RUN mvn clean package -Dmaven.test.skip=true
 
 FROM openjdk:17
 WORKDIR /build
