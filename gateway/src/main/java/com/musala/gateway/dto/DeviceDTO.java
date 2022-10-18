@@ -12,10 +12,8 @@ import lombok.Data;
 public class DeviceDTO {
 
     private Long id;
-
-    @NotNull
-    @NotBlank
-    private Number uid;
+  
+    private String uid;
 
     @NotNull
     @NotBlank

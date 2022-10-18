@@ -4,12 +4,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.musala.gateway.annotation.IPv4;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.persistence.Entity;
 
@@ -29,8 +31,10 @@ public class Gateway {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
     private String uuid;
+    
+    @PrePersist
+    private void generateUuid(){ uuid = UUID.randomUUID().toString();}
 
     @NotNull
     private String gatewayName;

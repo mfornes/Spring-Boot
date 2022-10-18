@@ -20,8 +20,6 @@ public class GatewayDTO {
 
     private Long id;
 
-    @NotNull
-    @NotBlank
     private String uuid;
 
     @NotNull

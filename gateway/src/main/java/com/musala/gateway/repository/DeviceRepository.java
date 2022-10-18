@@ -20,6 +20,6 @@ public interface DeviceRepository
         @Query("SELECT COUNT(*) FROM Device WHERE gateway = :gateway")
         Integer cantDeviceByGatewayId(Gateway gateway);
 
-        Optional<Device> findByUid(Number uid);
+        Optional<Device> findByUid(String uid);
 
 }

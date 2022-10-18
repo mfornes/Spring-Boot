@@ -1,0 +1,3 @@
+[submodule "React-Client-Spring-Boot"]
+	path = React-Client-Spring-Boot
+	url = https://github.com/mfornes/React-Client-Spring-Boot
