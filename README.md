@@ -9,5 +9,5 @@
 - Instructions
 	- Download the repository
 	- Move to the root of the repository
-	- Run the command docker-compose up -d
+	- Run the command: docker-compose up -d
 	- Test Rest Api by importing [Postman file](Musala.postman_collection.json) or web client in this repository: https://github.com/mfornes/React-Client-Spring-Boot

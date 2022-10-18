@@ -5,8 +5,6 @@ services:
     container_name: gateway_db
     image: mysql
     restart: always
-    ports:
-      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=gateway
@@ -37,4 +35,4 @@ networks:
   gateway-network:
 
 volumes:
-  gateway-db-volume: 
+  gateway-db-volume:
